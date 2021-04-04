@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+}
+<div class="row justify-content-md-start">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Wellcome
+                </div>
+                <div class="card-body">
+
+                    @if (Context.Session.GetString("FullName") != null)
+                      {
+                        <p>Name: @Context.Session.GetString("FullName")</p>
+                        <p>Email: @Context.Session.GetString("Email")</p>
+                        <a href="@Url.Action("Logout", "Home")" class="btn btn-warning">Logout</a>
+                      }
+                </div>
+            </div>
+
+        </div>
+    </div>
